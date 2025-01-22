@@ -1,6 +1,6 @@
-**Department**
+--Department--
 
-1.AddDepartment
+--1.AddDepartment--
 
 CREATE OR REPLACE PROCEDURE AddDepartment(departmentName VARCHAR)
 LANGUAGE plpgsql
@@ -12,7 +12,7 @@ END;
 $$;
 
 
-2.UpdateDepartment
+--2.UpdateDepartment--
 
 CREATE OR REPLACE PROCEDURE UpdateDepartment(
     departmentId INT,
@@ -28,7 +28,7 @@ END;
 $$;
 
 
-3.DeleteDepartment
+--3.DeleteDepartment--
 
 CREATE OR REPLACE PROCEDURE DeleteDepartment(departmentId INT)
 LANGUAGE plpgsql
@@ -39,33 +39,11 @@ BEGIN
 END;
 $$;
 
-
-4.To check if the department has employees
-
-CREATE OR REPLACE FUNCTION CheckIfDepartmentHasEmployees(departmentId INT)
-RETURNS BOOLEAN
-LANGUAGE plpgsql
-AS $$
-DECLARE
-    employeeCount INT;
-BEGIN
-    SELECT COUNT(*) INTO employeeCount
-    FROM Employees
-    WHERE DepartmentId = departmentId;
-
-    IF employeeCount > 0 THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-$$;
-
 ------------------------------------------------------------------------------------------------------------
 
-**Employee**
+--Employee--
 
-1.AddEmployee
+--1.AddEmployee--
 
 CREATE OR REPLACE PROCEDURE AddEmployee(
     employeeName VARCHAR,
@@ -83,7 +61,7 @@ END;
 $$;
 
 
-2.UpdateEmployee
+--2.UpdateEmployee--
 
 CREATE OR REPLACE PROCEDURE UpdateEmployee(
     employeeId INT,
@@ -107,7 +85,7 @@ END;
 $$;
 
 
-3.DeleteEmployee
+--3.DeleteEmployee--
 
 CREATE OR REPLACE PROCEDURE DeleteEmployee(employeeId INT)
 LANGUAGE plpgsql
