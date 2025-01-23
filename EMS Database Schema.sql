@@ -1,13 +1,13 @@
---Departments table--
+--Query to create Department table--
 
-CREATE TABLE Departments (
+CREATE TABLE IF NOT EXISTS Department (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(255) NOT NULL
 );
 
---Employees table--
+--Query to create Employee table--
 
-CREATE TABLE Employees (
+CREATE TABLE IF NOT EXISTS Employee (
     EmployeeId INT PRIMARY KEY,
     EmployeeName VARCHAR(255) NOT NULL,
     EmployeeAge INT NOT NULL,
@@ -16,5 +16,6 @@ CREATE TABLE Employees (
     DepartmentId INT,
     DepartmentName VARCHAR(255) NOT NULL,
  --Foreign key constraint linking Employee to Department--
-    CONSTRAINT FK_Employee_Department FOREIGN KEY (DepartmentId) REFERENCES Departments(DepartmentID)
+    CONSTRAINT FK_Employee_Department FOREIGN KEY (DepartmentId) REFERENCES Department(DepartmentID)
 );
+

@@ -1,6 +1,6 @@
---DepartmentTable--
+--Stored Procedures For DepartmentTable--
 
---1.AddDepartment--
+--1.This stored procedure creates a department when the procedure AddDepartment procedure is called--
 
 CREATE OR REPLACE PROCEDURE AddDepartment(departmentName VARCHAR)
 LANGUAGE plpgsql
@@ -12,7 +12,7 @@ END;
 $$;
 
 
---2.UpdateDepartment--
+--2.This stored procedure updates a department when UpdateDepartment procedure is called--
 
 CREATE OR REPLACE PROCEDURE UpdateDepartment(
     departmentId INT,
@@ -28,7 +28,7 @@ END;
 $$;
 
 
---3.DeleteDepartment--
+--3.This stored procedure deletes a department when DeleteDepartment procedure is called--
 
 CREATE OR REPLACE PROCEDURE DeleteDepartment(departmentId INT)
 LANGUAGE plpgsql
@@ -41,9 +41,9 @@ $$;
 
 ------------------------------------------------------------------------------------------------------------
 
---EmployeeTable--
+--Stored Procedures For EmployeeTable--
 
---1.AddEmployee--
+--1.This stored procedure creates an employee when AddEmployee procedure is called--
 
 CREATE OR REPLACE PROCEDURE AddEmployee(
     employeeName VARCHAR,
@@ -61,7 +61,7 @@ END;
 $$;
 
 
---2.UpdateEmployee--
+--2.This stored procedure updates an employee when UpdateEmployee procedure is called--
 
 CREATE OR REPLACE PROCEDURE UpdateEmployee(
     employeeId INT,
@@ -85,7 +85,7 @@ END;
 $$;
 
 
---3.DeleteEmployee--
+--3.This stored procedure deletes an employee when DeleteEmployee procedure is called--
 
 CREATE OR REPLACE PROCEDURE DeleteEmployee(employeeId INT)
 LANGUAGE plpgsql
